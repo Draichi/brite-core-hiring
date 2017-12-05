@@ -6,7 +6,7 @@
           <v-card-title>
             <div class="">
               <h2 class="headline primary--text">{{ job.title }}</h2><br>
-              <h4>{{ job.description }}</h4>
+              <h4>{{ job.rows }}</h4>
             </div>
           </v-card-title>
           <v-card-actions>

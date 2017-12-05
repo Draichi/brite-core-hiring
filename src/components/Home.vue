@@ -14,7 +14,7 @@
               <h3>{{ job.title }} - {{ job.date }}</h3>
             </v-card-title>
             <v-card-actions>
-              <v-btn flat color="light-blue lighten-2" :to="'job/' + job._id">
+              <v-btn flat color="light-blue lighten-2" :to="'risk/' + job._id">
                 <v-icon left>arrow_forward</v-icon>
                 Show</v-btn>
             </v-card-actions>

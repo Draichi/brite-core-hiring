@@ -24,7 +24,7 @@ export default new Router({
       component: AddNew
     },
     {
-      path: '/job/:id',
+      path: '/risk/:id',
       name: 'single',
       component: Single
     },
