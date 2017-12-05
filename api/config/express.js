@@ -6,7 +6,7 @@ var cors = require('cors');
 
 //middlewares
 app.use(cors());
-app.use(bodyParser.json()); //is needed to use 'req.body' in job.js
+app.use(bodyParser.json()); //is needed to use 'req.body' in risk.js
 
 consign({ cwd: 'app' })
   .include('models')

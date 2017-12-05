@@ -36,7 +36,7 @@ nodemon server.js
 ```
 
 ## Build Setup
-> On `root` folder
+> On `brite-core` folder
 ``` bash
 # serve with hot reload at localhost:8080
 npm run dev
