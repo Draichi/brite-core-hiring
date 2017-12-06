@@ -1,3 +1,6 @@
+![screenshot](usage.gif?raw=true "screenshot")
+
+See the demonstration on [YouTube](https://youtu.be/tvi4XGZeZ8Q)
 # brite-core
 
 > test for brite core
