@@ -5,8 +5,8 @@
         <v-card>
           <v-card-title>
             <div class="">
-              <h2 class="headline blue--text">{{ job.title }}</h2><br>
-              <h4 class="grey--text">{{ job.rows }}</h4>
+              <h2 class="display-4 blue--text">{{ job.title }}</h2><br>
+              <h3 class="white--text display-2" v-for="rows in job.rows" :key="rows.key">{{ rows.key }} : {{ rows.value }}</h3>
             </div>
           </v-card-title>
           <v-card-actions>

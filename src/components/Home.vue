@@ -1,17 +1,17 @@
 <template>
     <v-container>
       <v-layout row wrap v-for="job in jobs" :key="job.title" class="mb-4">
-        <v-flex xs12 sm6 offset-sm3>
+        <v-flex xs12 sm8 offset-sm2>
           <v-card>
             <v-container fill-height fluid>
               <v-layout fill-height>
                 <v-flex xs12 align-end flexbox>
-                  <h2 class="headline blue--text">{{ job.title }}</h2>
+                  <h2 class="display-3 blue--text">{{ job.title }}</h2>
                 </v-flex>
               </v-layout>
             </v-container>
-            <v-card-title>
-              <h3 class="grey--text">{{ job.rows }}: {{ job.rows }}</h3>
+            <v-card-title v-for="rows in job.rows" :key="rows.key">
+              <h3 class="grey--text display-1">{{ rows.key }} : {{ rows.value }}</h3>
             </v-card-title>
             <v-card-actions>
               <v-btn color="light-blue" :to="'risk/' + job._id">
