@@ -35,7 +35,7 @@
               <v-btn 
                 color="blue" 
                 type="submit"
-                >Create Meetup</v-btn>
+                >Create Risk</v-btn>
             </v-flex>
           </v-layout>
         </v-form>
