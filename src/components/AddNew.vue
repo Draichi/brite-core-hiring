@@ -22,7 +22,7 @@
           </v-layout>
           <v-layout row wrap>
             <v-flex xs12 sm6 offset-sm3>
-              <v-btn id="addFields" @click="addFields()">Add fields</v-btn>
+              <v-btn color="deep-purple" id="addFields" @click="addFields()">Add fields</v-btn>
               <v-flex v-for="(row, index) of rows" :key="row.index">
                 <v-text-field label="key" name="row.key" v-model="row.key"></v-text-field>
                 <v-text-field label="value" name="row.value" v-model="row.value"></v-text-field>
@@ -33,7 +33,7 @@
           <v-layout row>
             <v-flex xs12 sm6 offset-sm3>
               <v-btn 
-                class="primary" 
+                color="blue" 
                 type="submit"
                 >Create Meetup</v-btn>
             </v-flex>

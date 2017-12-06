@@ -5,13 +5,15 @@
         <v-card>
           <v-card-title>
             <div class="">
-              <h2 class="headline primary--text">{{ job.title }}</h2><br>
-              <h4>{{ job.rows }}</h4>
+              <h2 class="headline blue--text">{{ job.title }}</h2><br>
+              <h4 class="grey--text">{{ job.rows }}</h4>
             </div>
           </v-card-title>
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn :to="'/'" large color="primary">Back</v-btn>
+            <v-btn :to="'/'" color="light-blue">
+              <v-icon left>arrow_back</v-icon>
+              Back</v-btn>
           </v-card-actions>
         </v-card>
       </v-flex>

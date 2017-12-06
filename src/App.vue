@@ -11,17 +11,19 @@
           value="true"
           v-for="(item, i) in items"
           :key="i"
+          :to="item.link"
+          class="white--text"
         >
-          <v-list-tile-action>
+          <v-list-tile-action class="white--text">
             <v-icon v-html="item.icon"></v-icon>
           </v-list-tile-action>
-          <v-list-tile-content>
+          <v-list-tile-content class="white--text">
             <v-list-tile-title v-text="item.title"></v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
-    <v-toolbar fixed app :clipped-left="clipped">
+    <v-toolbar fixed app :clipped-left="clipped" color="indigo">
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       
       <v-toolbar-title>
@@ -61,7 +63,8 @@
         drawer: false,
         fixed: false,
         items: [
-          { icon: 'bubble_chart', title: 'Inspire' }
+          { icon: 'home', title: 'Home', link: '/' },
+          { icon: 'add', title: 'New one', link: '/new' }
         ]
       }
     }

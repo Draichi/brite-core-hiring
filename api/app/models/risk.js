@@ -3,11 +3,11 @@ var mongoose = require('mongoose');
 var schema = mongoose.Schema({
   title: {
     type: String,
-    required: false
+    required: true
   },
   rows: {
     type: Array,
-    required: false
+    required: true
   }
 });
 
