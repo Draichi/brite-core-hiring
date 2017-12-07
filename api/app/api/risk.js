@@ -7,8 +7,8 @@ var model = mongoose.model('Risk');
 api.list = function(req, res) {
   model
     .find({})
-    .then(function(jobs) {
-      res.json(jobs);
+    .then(function(risks) {
+      res.json(risks);
     }, function(error) {
       console.log(error);
       res.status(500).json(error);
@@ -18,8 +18,8 @@ api.list = function(req, res) {
 api.post = function(req, res) {
   model
     .create(req.body)
-    .then(function(job) {
-      res.json(job);
+    .then(function(risk) {
+      res.json(risk);
     }, function(error) {
       console.log(error);
       res.status(500).json(error);
@@ -29,9 +29,9 @@ api.post = function(req, res) {
 api.find = function(req, res) {
   model
     .findById(req.params.id)
-    .then(function(job) {
-      if(!job) throw Error('errooo!');
-      res.json(job);
+    .then(function(risks) {
+      if(!risks) throw Error('error at find method');
+      res.json(risks);
     }, function(error) {
       console.log(error);
       res.status(404).json(error);
@@ -41,8 +41,8 @@ api.find = function(req, res) {
 api.edit = function(req, res) {
   model
     .findByIdAndUpdate(req.params.id, req.body)
-    .then(function(job) {
-      res.json(job);
+    .then(function(risk) {
+      res.json(risk);
     }, function(error) {
       console.log(error);
       res.status(500).json(error);

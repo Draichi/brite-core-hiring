@@ -10,9 +10,9 @@ export default class RiskService {
         throw new Error('Cannot get jobs')
       })
   }
-  addNew (job) {
+  addNew (risk) {
     return this._resource
-      .save(job)
+      .save(risk)
   }
   del (id) {
     return this._resource

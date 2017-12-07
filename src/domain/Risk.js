@@ -1,7 +1,5 @@
 export default class Risk {
-  constructor (title = '', description = '', date = new Date()) {
+  constructor (title = '') {
     this.title = title
-    this.description = description
-    this.date = date
   }
 }
