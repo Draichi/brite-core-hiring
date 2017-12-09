@@ -50,7 +50,7 @@ export default {
       this.service.del(risk._id)
         .then((error, data) => {
           if (error) {
-            this.msg = 'something went wrong'
+            this.msg = 'something went wrong on method remove'
           }
           let index = this.risk.indexOf(risk)
           this.risk.splice(index, 1)
