@@ -22,7 +22,6 @@
           </v-layout>
           <v-layout row wrap>
             <v-flex xs12 sm6 offset-sm3>
-              <v-btn color="deep-purple" id="addFields" @click="addFields()">Add fields</v-btn>
               <v-flex v-for="(row, index) of rows" :key="row.index">
                 <v-text-field label="key" name="row.key" v-model="row.key"></v-text-field>
                 <v-text-field label="value" name="row.value" v-model="row.value"></v-text-field>
@@ -35,7 +34,13 @@
               <v-btn 
                 color="blue" 
                 type="submit"
-                >Create Risk</v-btn>
+              >Create Risk</v-btn>
+              <v-btn 
+                color="deep-purple" 
+                id="addFields" 
+                @click="addFields()"
+              >Add fields</v-btn>
+              
             </v-flex>
           </v-layout>
         </v-form>
@@ -45,16 +50,14 @@
 </template>
 
 <script>
-
-import RiskService from '../domain/RiskService'
-
 export default {
   data () {
     return {
-      title: this.title,
-      id: this.$route.params.id,
-      rows: []
-     
+      title: '',
+      rows: {
+        key: '',
+        value: ''
+      }
     }
   },
   methods: {
@@ -63,24 +66,12 @@ export default {
         title: this.title,
         rows: this.rows
       }
-      this.service
-        .addNew(risk)
-        .then((sucess, err) => {
-          if (err) {
-            console.log(err)
-          }
-          this.rows = '',
-          this.title = ''
-        })
-      
-      console.log(risk)
+      this.$store.dispatch('createRisk', risk)
+      this.$router.push('/')
     },
     addFields () {
       this.rows.push({key: '', value: ''})
     }
   },
-  created () {
-    this.service = new RiskService(this.$resource)
-  }
 }
 </script>

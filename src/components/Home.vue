@@ -25,37 +25,11 @@
 </template>
 
 <script>
-import RiskService from '../domain/RiskService'
-
 export default {
   name: 'Home',
-  data () {
-    return {
-      risks: []
-    }
-  },
-  created () {
-    this.service = new RiskService(this.$resource)
-    this.service
-      .list()
-      .then((risks, err) => {
-        if (err) {
-          this.msg = err.message
-        }
-        this.risks = risks
-      })
-  },
-  methods: {
-    remove (risk) {
-      this.service.del(risk._id)
-        .then((error, data) => {
-          if (error) {
-            this.msg = 'something went wrong on method remove'
-          }
-          let index = this.risk.indexOf(risk)
-          this.risk.splice(index, 1)
-          this.msg = 'risk removed'
-        })
+  computed: {
+    risks () {
+      return this.$store.getters.loadedRisks
     }
   }
 }
