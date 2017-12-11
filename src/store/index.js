@@ -26,14 +26,11 @@ export const store = new Vuex.Store({
         .then(data => {
           const risks = []
           const obj = data.val()
-          for (let ukey in obj) {
+          for (let key in obj) {
             risks.push({
-              id: ukey,
-              title: obj[ukey].title,
-              rows: {
-                key: obj[ukey].key,
-                value: obj[ukey].value
-              }
+              id: key,
+              title: obj[key].title,
+              rows: obj[key].rows
             })
           }
           commit('setLoadedRisks', risks)
@@ -45,16 +42,13 @@ export const store = new Vuex.Store({
     createRisk ({commit, getters}, payload) {
       const risk = {
         title: payload.title,
-        rows: {
-          key: payload.rows.key,
-          value: payload.rows.value
-        }
+        rows: payload.rows
       }
       firebase.database().ref('risks').push(risk)
         .then(data => {
           console.log(data)
-          const ukey = data.ukey
-          commit('createRisk', {...risk, id: ukey})
+          const key = data.key
+          commit('createRisk', {...risk, id: key})
         })
         .catch(error => console.log(error))
     }
@@ -62,7 +56,7 @@ export const store = new Vuex.Store({
   getters: {
     loadedRisks (state) {
       return state.loadedRisks.sort((riskA, riskB) => {
-        return riskA.title > riskB.title
+        return riskA.date > riskB.date
       })
     },
     error (state) {
@@ -70,7 +64,7 @@ export const store = new Vuex.Store({
     },
     loadedRisk (state) {
       return (riskId) => {
-        return state.loadedRisks.find(risk => {
+        return state.loadedRisks.find((risk) => {
           return risk.id === riskId
         })
       }

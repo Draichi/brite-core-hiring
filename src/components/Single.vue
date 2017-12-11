@@ -27,7 +27,7 @@ export default {
   props: ['id'],
   computed: {
     risk () {
-      return this.$store.getters.loadedRisks(this.id)
+      return this.$store.getters.loadedRisk(this.id)
     }
   }
 }

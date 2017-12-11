@@ -10,11 +10,11 @@
                 </v-flex>
               </v-layout>
             </v-container>
-            <v-card-title v-for="rows in risk.rows" :key="rows.key">
-              <h3 class="grey--text display-1">{{ rows.key }} : {{ rows.value }}</h3>
+            <v-card-title v-for="row in risk.rows" :key="row.key">
+              <h3 class="grey--text display-1">{{ row.key }} : {{ row.value }}</h3>
             </v-card-title>
             <v-card-actions>
-              <v-btn color="light-blue" :to="'risk/' + risk._id">
+              <v-btn color="light-blue" :to="'risk/' + risk.id">
                 <v-icon left>arrow_forward</v-icon>
                 Show</v-btn>
             </v-card-actions>

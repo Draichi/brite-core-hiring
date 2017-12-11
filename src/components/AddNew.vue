@@ -54,10 +54,7 @@ export default {
   data () {
     return {
       title: '',
-      rows: {
-        key: '',
-        value: ''
-      }
+      rows: []
     }
   },
   methods: {

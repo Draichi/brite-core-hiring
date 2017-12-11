@@ -25,6 +25,7 @@ export default new Router({
     },
     {
       path: '/risk/:id',
+      props: true,
       name: 'single',
       component: Single
     },
