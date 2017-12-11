@@ -1,6 +1,7 @@
 ![screenshot](usage.gif?raw=true "screenshot")
 
 See the demonstration on [YouTube](https://youtu.be/tvi4XGZeZ8Q)
+[Live Demo](http://lucao.online)
 # brite-core
 
 > test for brite core
